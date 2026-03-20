@@ -12,6 +12,16 @@ type Template interface {
 
 	GetNamespace() string
 
+	GetKubeVersion() *string
+
+	GetApiVersions() []string
+
+	GetNoHooks() bool
+
+	GetSkipSchemaValidation() bool
+
+	GetSkipTests() bool
+
 	GetValuesJson() string
 }
 
@@ -37,6 +47,21 @@ type TemplateImpl struct {
 
 	// Equivalent to the `--namespace` flag of `helm template`.
 	Namespace string `pkl:"namespace"`
+
+	// Equivalent to the `--kube-version` flag of `helm template`.
+	KubeVersion *string `pkl:"kubeVersion"`
+
+	// Equivalent to the `--api-versions` flag of `helm template`.
+	ApiVersions []string `pkl:"apiVersions"`
+
+	// Equivalent to the `--no-hooks` flag of `helm template`.
+	NoHooks bool `pkl:"noHooks"`
+
+	// Equivalent to the `--skip-schema-validation` flag of `helm template`.
+	SkipSchemaValidation bool `pkl:"skipSchemaValidation"`
+
+	// Equivalent to the `--skip-tests` flag of `helm template`.
+	SkipTests bool `pkl:"skipTests"`
 
 	ValuesJson string `pkl:"valuesJson"`
 }
@@ -68,6 +93,31 @@ func (rcv TemplateImpl) GetReleaseName() string {
 // Equivalent to the `--namespace` flag of `helm template`.
 func (rcv TemplateImpl) GetNamespace() string {
 	return rcv.Namespace
+}
+
+// Equivalent to the `--kube-version` flag of `helm template`.
+func (rcv TemplateImpl) GetKubeVersion() *string {
+	return rcv.KubeVersion
+}
+
+// Equivalent to the `--api-versions` flag of `helm template`.
+func (rcv TemplateImpl) GetApiVersions() []string {
+	return rcv.ApiVersions
+}
+
+// Equivalent to the `--no-hooks` flag of `helm template`.
+func (rcv TemplateImpl) GetNoHooks() bool {
+	return rcv.NoHooks
+}
+
+// Equivalent to the `--skip-schema-validation` flag of `helm template`.
+func (rcv TemplateImpl) GetSkipSchemaValidation() bool {
+	return rcv.SkipSchemaValidation
+}
+
+// Equivalent to the `--skip-tests` flag of `helm template`.
+func (rcv TemplateImpl) GetSkipTests() bool {
+	return rcv.SkipTests
 }
 
 func (rcv TemplateImpl) GetValuesJson() string {
