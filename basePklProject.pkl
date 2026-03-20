@@ -1,5 +1,5 @@
 //===----------------------------------------------------------------------===//
-// Copyright © 2025 Apple Inc. and the Pkl project authors. All rights reserved.
+// Copyright © 2025-2026 Apple Inc. and the Pkl project authors. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -38,9 +38,9 @@ package {
   name = packageName
   version = read("\(packageName)/pkl/VERSION.txt").text.trim()
   apiTests = tests // api tests are shared with module tests
-  baseUri = "package://pkg.pkl-lang.org/pkl-readers/\(name)"
+  baseUri = "package://github.com/ndrpnt/pkl-readers/releases/download/\(name)@\(version)/\(name)"
   packageZipUrl =
-    "https://github.com/apple/pkl-readers/releases/download/\(name)@\(version)/\(name)@\(version).zip"
+    "https://github.com/ndrpnt/pkl-readers/releases/download/\(name)@\(version)/\(name)@\(version).zip"
   license = "Apache-2.0"
   authors {
     "The Pkl Authors <pkl-oss@group.apple.com>"
@@ -51,10 +51,10 @@ package {
     "generator-settings.pkl"
   }
   description = myModule.docComment
-  issueTracker = "https://github.com/apple/pkl-readers/issues"
-  sourceCode = "https://github.com/apple/pkl-readers/tree/\(name)@\(version)/\(packageName)/pkl"
+  issueTracker = "https://github.com/ndrpnt/pkl-readers/issues"
+  sourceCode = "https://github.com/ndrpnt/pkl-readers/tree/\(name)@\(version)/\(packageName)/pkl"
   sourceCodeUrlScheme =
-    "https://github.com/apple/pkl-readers/blob/\(name)@\(version)/\(packageName)/pkl%{path}#L%{line}-%{endLine}"
+    "https://github.com/ndrpnt/pkl-readers/blob/\(name)@\(version)/\(packageName)/pkl%{path}#L%{line}-%{endLine}"
 }
 
 tests {

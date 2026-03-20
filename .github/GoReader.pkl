@@ -95,7 +95,7 @@ fixed buildJobs: Mapping<String, Workflow.Job> = (super.buildJobs) {
     }
   }
   ["build-\(module.name)-macos-universal-binary"] {
-    `runs-on` = new Listing { "macos"; "self-hosted" }
+    `runs-on` = new Listing { "macos-latest" }
     name = "build: \(module.name) (universal binary)"
     `if` = "github.repository_owner == 'apple'"
     needs { "build-\(module.name)" }

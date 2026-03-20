@@ -218,8 +218,7 @@ jobs:
     needs:
     - build-helm
     runs-on:
-    - macos
-    - self-hosted
+    - macos-latest
     steps:
     - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6
       with:
@@ -365,8 +364,7 @@ jobs:
     needs:
     - build-prometheus
     runs-on:
-    - macos
-    - self-hosted
+    - macos-latest
     steps:
     - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6
       with:
